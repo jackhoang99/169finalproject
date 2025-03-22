@@ -1,0 +1,51 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Task Manager Pro</h1>
+            <div class="task-stats" id="taskStats"></div>
+        </div>
+
+        <div class="task-input-container">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <select id="taskPriority">
+                <option value="Low">Low Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="High">High Priority</option>
+            </select>
+            <input type="date" id="dueDate">
+            <select id="category">
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+                <option value="shopping">Shopping</option>
+                <option value="other">Other</option>
+            </select>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <div class="task-controls">
+            <select onchange="sortTasks(this.value)" class="sort-select">
+                <option value="">Sort by...</option>
+                <option value="date-asc">Date (Earliest first)</option>
+                <option value="date-desc">Date (Latest first)</option>
+                <option value="priority">Priority</option>
+            </select>
+        </div>
+
+        <div id="taskList"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+*/5 * * * * curl -i -X POST https://<project-ref>.supabase.co/functions/v1/send-reminders
